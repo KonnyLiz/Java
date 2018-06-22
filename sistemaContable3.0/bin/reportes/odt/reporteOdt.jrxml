@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteOdt" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="numeroIdOtTabla" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     cliente.`NOMBRE` AS cliente_NOMBRE,
+     order_trabajo.`ID_OT` AS order_trabajo_ID_OT,
+     order_trabajo.`OBSERVACION` AS order_trabajo_OBSERVACION,
+     order_trabajo.`NUMERO` AS order_trabajo_NUMERO,
+     order_trabajo.`FECHA` AS order_trabajo_FECHA,
+     order_trabajo.`N_ARCHIVO` AS order_trabajo_N_ARCHIVO,
+     order_trabajo.`IMPRESION` AS order_trabajo_IMPRESION,
+     order_trabajo.`PRECIO` AS order_trabajo_PRECIO,
+     order_trabajo.`ABONO` AS order_trabajo_ABONO,
+     order_trabajo.`SALDO` AS order_trabajo_SALDO,
+     order_trabajo.`ESTADO` AS order_trabajo_ESTADO,
+     empleado.`NOMBRE` AS empleado_NOMBRE
+FROM
+     `order_trabajo` order_trabajo,
+     `cliente` cliente,
+     `empleado` empleado
+WHERE
+     order_trabajo.ID_EMP = empleado.ID_EMP
+ AND order_trabajo.CI_RUC = Cliente.CI_RUC
+ AND  ID_OT=$P{numeroIdOtTabla}
+ GROUP BY order_trabajo.NUMERO]]>
+	</queryString>
+	<field name="cliente_NOMBRE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="order_trabajo_ID_OT" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="order_trabajo_OBSERVACION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="order_trabajo_NUMERO" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="order_trabajo_FECHA" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="order_trabajo_N_ARCHIVO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="order_trabajo_IMPRESION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="order_trabajo_PRECIO" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="order_trabajo_ABONO" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="order_trabajo_SALDO" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="order_trabajo_ESTADO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="empleado_NOMBRE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="221">
+			<line>
+				<reportElement x="0" y="54" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="51" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="200" y="0" width="240" height="22"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDEN DE TRABAJO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="202" y="22" width="135" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[R.U.C:0603333188001  Nº.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="337" y="22" width="128" height="20" forecolor="#FF3333"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{order_trabajo_NUMERO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="59" width="56" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="59" y="59" width="206" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cliente_NOMBRE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="352" y="69" width="113" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID ODT Sistema:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="454" y="69" width="78" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{order_trabajo_ID_OT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="14" y="79" width="45" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="59" y="79" width="157" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{order_trabajo_FECHA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="99" width="138" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre Del Archivo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="124" y="99" width="196" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{order_trabajo_N_ARCHIVO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="157" width="139" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO DE TRABAJO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="134" y="157" width="203" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{order_trabajo_IMPRESION}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="46" y="73" width="245" height="1"/>
+			</line>
+			<line>
+				<reportElement x="46" y="93" width="143" height="1"/>
+			</line>
+			<line>
+				<reportElement x="107" y="113" width="411" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="185" y="123" width="167" height="20" forecolor="#3333FF"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TRABAJOS A REALIZAR]]></text>
+			</staticText>
+			<line>
+				<reportElement x="438" y="83" width="100" height="1"/>
+			</line>
+			<line>
+				<reportElement x="117" y="172" width="300" height="1"/>
+			</line>
+			<line>
+				<reportElement x="179" y="142" width="178" height="1" forecolor="#3333FF"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="3" y="198" width="553" height="23" forecolor="#FFFFFF" backcolor="#000000"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CANTIDAD     DESCRIPCION    MEDIDAS          PRECIO U          TOTAL]]></text>
+			</staticText>
+			<image>
+				<reportElement x="9" y="1" width="128" height="51"/>
+				<imageExpression class="java.lang.String"><![CDATA["logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band/>
+	</pageHeader>
+	<columnHeader>
+		<band/>
+	</columnHeader>
+	<detail>
+		<band height="61">
+			<subreport>
+				<reportElement x="44" y="11" width="500" height="50"/>
+				<subreportParameter name="numeroIdOtTabla">
+					<subreportParameterExpression><![CDATA[$P{numeroIdOtTabla}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["reportes/odt/reporteOdt_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="226">
+			<line>
+				<reportElement x="410" y="158" width="140" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="410" y="139" width="145" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{empleado_NOMBRE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="313" y="139" width="106" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RESPONSABLE:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="77" y="159" width="100" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="69" y="140" width="108" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{order_trabajo_ESTADO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="139" width="68" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTADO:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="119" y="111" width="425" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="154" y="74" width="376" height="50"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{order_trabajo_OBSERVACION}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="119" y="89" width="425" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="15" y="74" width="139" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OBSERVACIONES:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="312" y="36" width="93" height="20" forecolor="#FF0033"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{order_trabajo_SALDO}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="293" y="50" width="100" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="250" y="36" width="53" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALDO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="78" y="36" width="179" height="20" forecolor="#FF3333"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{order_trabajo_ABONO}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="59" y="51" width="149" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="15" y="36" width="56" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ABONO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="165" y="14" width="179" height="20" forecolor="#FF0000"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{order_trabajo_PRECIO}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="146" y="30" width="167" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="14" y="16" width="139" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VALOR DEL TRABAJO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="205" width="102" height="21"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIRMA CLIENTE]]></text>
+			</staticText>
+			<line>
+				<reportElement x="318" y="205" width="215" height="1"/>
+			</line>
+			<line>
+				<reportElement x="29" y="205" width="215" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="71" y="205" width="144" height="21"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIRMA MAKROPRINT]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

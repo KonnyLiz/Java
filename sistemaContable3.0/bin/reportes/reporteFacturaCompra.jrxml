@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteFacturaCompra" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<parameter name="idcomgas" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     compras_gastos.`ID_COM_GAS` AS compras_gastos_ID_COM_GAS,
+     compras_gastos.`COMPROBANTE` AS compras_gastos_COMPROBANTE,
+     compras_gastos.`DESCRIPCION` AS compras_gastos_DESCRIPCION,
+     compras_gastos.`TIPO_COMPROBANTE` AS compras_gastos_TIPO_COMPROBANTE,
+     compras_gastos.`IVA` AS compras_gastos_IVA,
+     compras_gastos.`SUBTOTAL` AS compras_gastos_SUBTOTAL,
+     compras_gastos.`DESCRIPCIO_ADICIONAL` AS compras_gastos_DESCRIPCIO_ADICIONAL,
+     compras_gastos.`TOTAL_PAGADO` AS compras_gastos_TOTAL_PAGADO,
+     compras_gastos.`NUMERO_RETENCION` AS compras_gastos_NUMERO_RETENCION,
+     compras_gastos.`TOTAL_RETENCION` AS compras_gastos_TOTAL_RETENCION,
+     compras_gastos.`FECHA_COMPRA` AS compras_gastos_FECHA_COMPRA,
+     compras_gastos.`ESTADO` AS compras_gastos_ESTADO
+FROM
+     `compras_gastos` compras_gastos
+where 
+id_com_gas= $P{idcomgas}]]>
+	</queryString>
+	<field name="compras_gastos_ID_COM_GAS" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="compras_gastos_COMPROBANTE" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="compras_gastos_DESCRIPCION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="compras_gastos_TIPO_COMPROBANTE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="compras_gastos_IVA" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="compras_gastos_SUBTOTAL" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="compras_gastos_DESCRIPCIO_ADICIONAL" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="compras_gastos_TOTAL_PAGADO" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="compras_gastos_NUMERO_RETENCION" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="compras_gastos_TOTAL_RETENCION" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="compras_gastos_FECHA_COMPRA" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="compras_gastos_ESTADO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="166" splitType="Stretch">
+			<line>
+				<reportElement x="-4" y="61" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="209" y="29" width="123" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[R.U.C:0602982597001  Nº.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="165" y="4" width="226" height="22"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COPIA RECIBO DE COMPRA]]></text>
+			</staticText>
+			<image>
+				<reportElement x="5" y="8" width="128" height="51"/>
+				<imageExpression class="java.lang.String"><![CDATA["logo.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="-4" y="58" width="555" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="341" y="26" width="50" height="20" forecolor="#FF0000"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{compras_gastos_COMPROBANTE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="67" width="68" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA :]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="71" y="67" width="271" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{compras_gastos_FECHA_COMPRA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="101" width="85" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROVEEDOR :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="106" y="101" width="416" height="20" forecolor="#FF0000"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{compras_gastos_DESCRIPCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="522" y="3" width="31" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{compras_gastos_ID_COM_GAS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="125" width="95" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO RECIBO :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="106" y="125" width="416" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{compras_gastos_TIPO_COMPROBANTE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="28" y="146" width="68" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTADO :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="106" y="145" width="416" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{compras_gastos_ESTADO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="150" splitType="Stretch">
+			<textField>
+				<reportElement x="436" y="96" width="70" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{compras_gastos_IVA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="436" y="76" width="122" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{compras_gastos_SUBTOTAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="22" width="511" height="42"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{compras_gastos_DESCRIPCIO_ADICIONAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="436" y="116" width="85" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{compras_gastos_TOTAL_PAGADO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="107" width="62" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{compras_gastos_NUMERO_RETENCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="130" width="113" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{compras_gastos_TOTAL_RETENCION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="2" width="95" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DETALLES:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="357" y="76" width="75" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUBTOTAL :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="357" y="96" width="75" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IVA :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="357" y="116" width="75" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="76" width="131" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RETENCIONES ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="107" width="68" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NUMERO :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="130" width="68" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL :]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

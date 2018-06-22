@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function cliente()
+{ 
+	alert(this.clientes.nom.value+"  "+this.clientes.apel.value+"  "+this.clientes.edad.value);
+	<% String x;
+	x="hola mundo"; %>
+	var y="<% = x %>";
+	alert(y);
+	}
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <form name="clientes" action="" method="POST">
+        Nombre:&nbsp&nbsp&nbsp<input type="Text" name="nom" value="ingrese el nombre">  <br>  <br>
+        Apellido:&nbsp&nbsp<input type="Text" name="apel" value="ingrese el Apellido">  <br> <br>
+        Edad:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="Text" name="edad" value="ingrese la Edad">  <br> <br>
+        Sexo:&nbsp&nbsp <input type="radio" name="sexoM" value="Masculino" checked> Masculino <input type="radio" name="sexoF" value="Femenino"> Femenino
+       <br><br>
+        <input type=button onclick=cliente() value=Enviar>
+        <input type=hidden name=varoculta value=Secreto>
+     </form>
+</body>
+</html>

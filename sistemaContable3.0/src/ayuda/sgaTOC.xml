@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<toc version="1.0" categoryclosedimage="FolderClosed" categoryopenimage="FolderOpened"  topicimage="ItemIco">
+        
+         
+        <tocitem text="Item"> 
+                <tocitem text="Introducción"    target="introduccion"/>
+		    <tocitem text="Acceso de Usuarios"          target="AccesoU"/>
+                <tocitem text="Pantalla Principal"          target="pantprl"/>
+                <tocitem text="Administración"          target="Administración"/>
+                <tocitem text="Ventas"          target="ReciboVnt"/>
+		    <tocitem text="Consultas"          target="Consultas"/>
+		    <tocitem text="Contabilidad"          target="Conta"/>
+		    <tocitem text="Inventarios"          target="Inventarios"/>
+                <tocitem text="Guía Rapida"          target="GRapida"/>
+		    <tocitem text="Alertas"          target="Alertas"/>
+		    <tocitem text="Reportes"          target="Reportes"/>
+		    <tocitem text="Requerimientos"          target="Reqsis"/>
+	
+
+        </tocitem>
+      <!-- 
+        <tocitem text="Ver"> 
+                <tocitem text="Look" target="Look"/>
+                <tocitem text="Barra de Herramientas" target="Barra de Herramientas"/>
+                <tocitem text="Iconos" target="Iconos"/>
+        </tocitem>
+        
+        <tocitem text="Alumnos"> 
+                <tocitem text="Asignar A Paralelo" target="Asignar Alumnos a Paralelo"/>
+                <tocitem text="Asistencias" target="Asistencias"/>
+                <tocitem text="Acreditacion" target="Acreditacion"/>
+        </tocitem>
+        
+        <tocitem text="Profesor"> 
+                <tocitem text="Profesor" target="Profesor"/>
+                <tocitem text="Asignar Materia a Profesor" target="Asignar Materia a Profesor"/>
+        </tocitem>
+        
+        <tocitem text="Materias"> 
+                <tocitem text="Pensum" target="Pensum"/>
+                <tocitem text="Especialidad" target="Especialidad"/>
+                <tocitem text="Paralelo a Especialidad" target="Paralelo A Especialidad"/>
+                <tocitem text="Materia" target="Materias"/>
+                <tocitem text="Materia a Paralelo" target="Materia a Paralelo"/>
+        </tocitem>
+        
+        <tocitem text="Expediente"> 
+                <tocitem text="Expediente Estudiante" target="Expediente Estudiante"/>
+                <tocitem text="Expediente Profesor" target="Expediente Profesor"/>
+                <tocitem text="Expediente Curso" target="Expediente Curso"/>
+        </tocitem>
+        
+        <tocitem text="Herramientas"> 
+                <tocitem text="Configuracion" target="Configuracion"/>
+                <tocitem text="Mostrar Configuración" target="Mostrar Configuracion"/>
+        </tocitem>
+        
+        <tocitem text="Usuarios"> 
+                <tocitem text="Tipos de Usuario" target="Tipo de Usuarios"/>
+                <tocitem text="Usuarios" target="Crear Usuarios"/>
+                <tocitem text="Acceso" target="Accesos"/>
+                <tocitem text="Cuenta" target="Usuarios"/>
+        </tocitem>
+        
+        <tocitem text="Botones Extras"    target="Botones Extras"/>
+        <tocitem text="Barra de Herramientas"    target="Barra de Herramientas"/>
+        <tocitem text="Ingresar al Sistema"    target="Ingresar al Sistema"/>
+        <tocitem text="Salir"    target="Salir"/>
+        <tocitem text="Buscar"    target="Buscar"/>
+        <tocitem text="Pantalla Principal"    target="Pantalla Principal"/>
+        <tocitem text="Mantenimiento"    target="Mantenimiento"/>
+        <tocitem text="Navegador"    target="Navegador"/>
+        -->
+</toc>

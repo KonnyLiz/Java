@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<map version="1.0">
+        <mapID target="introduccion"                    url="pages/introduccion.html"/>
+	  <mapID target="Administración"         url="pages/Menu_Administracion.htm"/>
+	  <mapID target="AccesoU"     url="pages/Acceso_de_usuarios.htm"/>
+	  <mapID target="PantPrl"     url="pages/Pantalla_Principal.html"/>
+  	  <mapID target="Consultas"   url="pages/Consultas.html"/>
+	  <mapID target="ReciboVnt"   url="pages/Recibo_venta.html"/>
+	  <mapID target="Conta"       url="pages/Contabilidad.html"/>
+	  <mapID target="Inventarios" url="pages/Inventarios.html"/>
+	  <mapID target="GRapida"     url="pages/Guia_R_pida.html"/>
+	  <mapID target="Alertas"     url="pages/Alertas.html"/>
+	  <mapID target="Reportes"    url="pages/Reportes.html"/>
+	  <mapID target="Reqsis"      url="pages/Requerimientos_del_sistema.html"/>
+
+
+        <mapID target="FolderClosed"                    url="images/FolderClosed.gif"/>
+        <mapID target="FolderOpened"                    url="images/FolderOpened.gif"/>
+        <mapID target="ItemIco"                         url="images/book.png"/>
+        <mapID target="ContentIco"                      url="images/bookBlue.png"/>
+        <mapID target="SearchIco"                       url="images/view.png"/>
+        <mapID target="PrintIco"                        url="images/printer.png"/>
+        <mapID target="PrintSetupIco"                   url="images/printersetup.png"/>
+        <mapID target="BackwardIco"                     url="images/Back.png"/>
+        <mapID target="ForwardIco"                      url="images/Forward.png"/>
+        <mapID target="LogoIco"                         url="images/logo.gif"/>
+        <mapID target="Favoritos"                       url="images/Favorites.png"/>
+        <mapID target="Home"                            url="images/Home.png"/>
+        <mapID target="Reload"                          url="images/Reload.png"/>
+</map>

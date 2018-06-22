@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FacturaReporte_subreport1" pageWidth="555" pageHeight="800" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<style name="Title" isDefault="false" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" isDefault="false" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" isDefault="false" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" isDefault="false" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" isDefault="false" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[]]></conditionExpression>
+			<style isDefault="false" style="Row" mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="id_recibo" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+     count(id_recibo),
+     recibo_detalle.`DESCRIPCION` AS recibo_detalle_DESCRIPCION,
+     recibo_detalle.`PRECIO` AS recibo_detalle_PRECIO,
+     TRUNCATE(count(id_recibo)*precio,2)
+FROM
+     `recibo_detalle` recibo_detalle
+WHERE
+     id_recibo =$P{id_recibo}
+GROUP BY
+     descripcion]]>
+	</queryString>
+	<field name="count(id_recibo)" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="recibo_detalle_DESCRIPCION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="recibo_detalle_PRECIO" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TRUNCATE(count(id_recibo)*precio,2)" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="105" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$F{count(id_recibo)}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="129" y="0" width="163" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{recibo_detalle_DESCRIPCION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="311" y="0" width="92" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Float"><![CDATA[$F{recibo_detalle_PRECIO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="449" y="0" width="101" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[$F{TRUNCATE(count(id_recibo)*precio,2)}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

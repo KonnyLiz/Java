@@ -1,0 +1,44 @@
+/*
+Estilos para mejorar el diseño de las paginas 
+las clases empiezan con punto 
+en el html se aplica con "class='texto1'"
+*/
+
+
+
+/*
+da un color azul y fondo blanco al texto
+*/
+.titulos{
+     font-family: Verdana, Arial, Helvetica, sans-serif;
+     color: #0000FF;
+     font-weight: bold;
+     font-size="30";
+
+  	}
+.textoNegro{
+     font-family: Verdana, Arial, Helvetica, sans-serif;
+     color: #000000;
+     font-weight: bold;
+     font-size="14";
+     text-align:justify;
+   	}
+  .subtitulo1{
+     font-family: Verdana, Arial, Helvetica, sans-serif;
+     color: #0000FF;
+     font-weight: bold;
+     font-size="20";
+     }
+   .subtitulo2{
+     font-family: Verdana, Arial, Helvetica, sans-serif;
+     color: #FF0000;
+     font-weight: bold;
+     font-size="20";
+     }
+
+    .nota{
+     font-family: Verdana, Arial, Helvetica, sans-serif;
+     color: #FF0000;
+     font-weight: bold;
+     font-size="19";
+     }

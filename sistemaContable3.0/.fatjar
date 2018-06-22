@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Mon Apr 11 16:12:22 COT 2011
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=E\:\\workspace\\sistemaContable3.0\\sistemaContable37.jar
+manifest.mergeall=true
+manifest.mainclass=ventanas.PantallaPrincipal
+manifest.file=<createnew>
+jarname.isextern=true
+onejar.expand=ll
+excludes=
+includes=

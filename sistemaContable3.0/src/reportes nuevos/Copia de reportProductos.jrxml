@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportProductos" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<queryString>
+		<![CDATA[select 
+p.ID_PRO , 
+q.DESCRIPCION as 'descPRo',
+b.DESCRIPCION as 'BodPRo', 
+p.ID_UNIDAD_MEDIDA,
+p.ID_PR,
+sum(i.TOTAL_BRUTO),
+p.DESCRIPCION as 'nombreProd', 
+p.PVP, 
+p.PVSOCIO,
+p.EQ_UNIDAD,
+t.DESCRIPCION_TP,
+u.NOMENCLATURA,
+sum(i.TOTAL_BRUTO)/p.EQ_UNIDAD
+
+
+FROM producto p,bodega b,proveedor q,inventario i,tipo_producto t,unidad_medida u
+
+where p.id_prov=q.ID_PROV
+and p.ID_BODEGA=b.ID_BODEGA
+and p.id_pro=i.id_pro
+and p.ID_TP=t.ID_TP
+and p.ID_UNIDAD_MEDIDA=u.ID_UNIDAD_MEDIDA
+
+group by 1]]>
+	</queryString>
+	<field name="ID_PRO" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descPRo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BodPRo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ID_UNIDAD_MEDIDA" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ID_PR" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sum(i.TOTAL_BRUTO)" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreProd" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PVP" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PVSOCIO" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EQ_UNIDAD" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DESCRIPCION_TP" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NOMENCLATURA" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sum(i.TOTAL_BRUTO)/p.EQ_UNIDAD" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="58" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="8" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="51" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="171" y="13" width="381" height="35" forecolor="#FF0000"/>
+				<textElement textAlignment="Center">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Productos]]></text>
+			</staticText>
+			<image>
+				<reportElement x="1" y="0" width="151" height="58"/>
+				<imageExpression class="java.lang.String"><![CDATA["logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="212" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="0" width="106" height="20" forecolor="#FFFFFF" backcolor="#FF0000"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Producto :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="162" y="80" width="194" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{descPRo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="162" y="34" width="27" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{ID_PRO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="221" y="34" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{BodPRo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="198" y="43" width="12" height="1"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="57" width="151" height="20" forecolor="#FFFFFF" backcolor="#FF0000"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="80" width="152" height="20" forecolor="#FFFFFF" backcolor="#FF0000"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Proveedor :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="162" y="57" width="315" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombreProd}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="34" width="151" height="20" forecolor="#FFFFFF" backcolor="#FF0000"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id de Producto y Bodega :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="103" width="152" height="20" forecolor="#FFFFFF" backcolor="#FF0000"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad en Bruto :]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="162" y="103" width="194" height="20"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="245" y="176" width="70" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="152" width="152" height="20" forecolor="#FFFFFF" backcolor="#FF0000"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Equivalente a la unidad :]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="162" y="176" width="71" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="176" width="152" height="20" forecolor="#FFFFFF" backcolor="#FF0000"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio A/B :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="255" y="176" width="60" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{PVSOCIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="162" y="152" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{EQ_UNIDAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="292" y="103" width="46" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NOMENCLATURA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="175" y="103" width="100" height="20" forecolor="#FF0000"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{sum(i.TOTAL_BRUTO)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="176" width="50" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{PVP}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="368" y="82" width="163" height="89"/>
+				<imageExpression class="java.lang.String"><![CDATA["productosIMG/"+$F{ID_PRO}+".jpg"]]></imageExpression>
+			</image>
+			<rectangle radius="10">
+				<reportElement x="163" y="127" width="194" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="127" width="152" height="20" forecolor="#FFFFFF" backcolor="#FF0000"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad en Items :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="292" y="127" width="64" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unidades]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="175" y="127" width="100" height="20" forecolor="#FF0000"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{sum(i.TOTAL_BRUTO)/p.EQ_UNIDAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="303" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DESCRIPCION_TP}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="1" y="6" width="209" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="512" y="6" width="36" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["" + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="342" y="6" width="170" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page " + $V{PAGE_NUMBER} + " of "]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

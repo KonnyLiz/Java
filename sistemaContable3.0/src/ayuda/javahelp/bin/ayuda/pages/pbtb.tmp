@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+   <link href="styles.css"  rel="stylesheet" type="text/css">
+
+<title>Recibo_venta</title>
+<style> table, td, th { border-color: #cccccc; border-style: solid; } table { border-width: 0 0 1px 1px; border-spacing: 0px; border-collapse: collapse; } td { border-width: 1px; } th { border-width: 1px; } </style></head>
+<body bgcolor="#ffffff">
+<p class="titulos">  Menú Ventas</p>
+ <p class="textoNegro">Las opciones de este menú le permitirán llevar un control de las ventas de su negocio, controlar los recibos que emite, ademas de chequear y modificar los mismos
+de manera amigable.   </p>
+ <p></p>
+
+
+ <p class="textoNegro">Además se ha implementado una opción llamada
+
+Ordenes de Trabajo las cuales le permitirán organizar
+
+en una sola hoja los elementos o productos necesarios
+
+para crear un producto que se realiza bajo pedido.</p>
+   <p></p>
+
+
+
+
+ <p class="subtitulo1">Cobro de Facturas <span class="subtitulo2">HK (Ninguna)</span></p>
+
+   <p></p>
+
+Para poder registrar la manera como sus clientes
+
+han pagado o deberán pagarán los recibos
+
+que usted emitió tendra que usar cualquiera
+
+de los siguientes búsquedas de recibos de la
+
+sección de Consultas .
+
+  <p></p>
+
+El sistema permitirá crear recordatorios automáticamente
+
+cuando se genere algún   pago a plazo, además
+
+de  almacenar la manera de pago.
+
+   <p></p>
+
+En este menú encontrará únicamente que
+  <p></p>
+modos de pago acepta el negocio.
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <p></p>
+
+Por defecto al almacenar un recíbo el sistema lo considera
+como pagado en "Efectivo" pero esta información puede
+ser modificada por el usuario.
+
+  <p></p>
+   Ordenes de Trabajo  HK (Alt+Ctrl+E)
+  <p></p>
+  Las ordenes de trabajo u ODT le permitirá hacer un listado de productos necesarios para conformar un solo producto el cual esta compuesto
+
+  por otros, ademas le permite llevar un control de adelantos que se realizan para iniciar este tipo de trabajos, ademas de permitir la facilidad de
+
+  asignar el trabajo a un empleado para llevar un control acerca del avance del mismo.
+
+
+  <p></p>
+  Para poder ingresar datos en las ODT primero debemos registrar datos básicos de los materiales o productos que requiere el producto a
+
+  elaborar, para lo cual usuamos este formulario llamado Tipo de Trabajo.
+
+
+    <p></p>
+
+
+
+
+
+
+
+
+    <p></p>
+
+  Algo importante de mencionar es que este módulo de ODT trabaja por medidas, por lo cual el campo de precio mínimo es el costo aproximado
+
+  de un trabajo que no requiere muchos materiales o que no cumple con una medida mínima para elaborarlo .
+
+
+     <p></p>
+  un ejemplo: un producto "X" de medidas 1x0.50 costará lo que anotamos como " precio mínimo" mientras algo que sobrepase o sea igual a 1x1 en medidas llevara su proporcional
+
+  según el campo "precio".
+
+
+  <p></p>
+
+
+
+
+
+
+
+
+
+
+
+    <p></p>
+               Recibo Venta HK (Alt+Ctrl+R)
+   <p></p>
+  Las ordenes de trabajo u ODT le permitirá hacer un listado de productos necesarios para conformar un solo producto el cual esta compuesto
+
+  por otros, ademas le permite llevar un control de adelantos que se realizan para iniciar este tipo de trabajos, ademas de permitir la facilidad de
+
+  asignar el trabajo a un empleado para llevar un control acerca del avance del mismo.
+    <p></p>
+
+
+  Para poder ingresar datos en las ODT primero debemos registrar datos básicos de los materiales o productos que requiere el producto a
+
+  elaborar, para lo cual usuamos este formulario llamado Tipo de Trabajo.
+    <p></p>
+
+
+
+
+
+
+   <p></p>
+  El area de orden de trabajo permite añadir al recibo los datos de "una" orden de trabajo para ser facturados .
+    <p></p>
+  Es importante antes de empezar a ingresar datos en el recibo especificar si es una factura o una nota de venta, en la sección "Escoja una opción".
+    <p></p>
+  El ícono junto a los datos del cliente nos permite buscar un registro existente.
+    <p></p>
+  Recuerde se puede añadir en la lista del recibo hasta 10 item diferentes.
+    <p></p>
+  La opción ver reporte permitirá al usuario observar la factura generada en una versión que puede ser exportada en varios formatos.
+    <p></p>
+  La opción imprimir nos permitirá, realizar la acción que tiene etiquetado sobre algún recibo en un impresora.
+     <p></p>
+  La sección "Aplica cobro del I.V.A. puede ser utilizada si usted requiere imprimir el recibo grabado con el impuesto "0%".
+     <p></p>
+ Cuando se registra una factura, esta se alamcena  en el sistema como pagado en efectivo, esto se lo puede cambiar realizar la  busqueda .
+
+</body>
+</html>

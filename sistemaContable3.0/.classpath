@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="src/" kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="src/conectores/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/commons-collections-2.1.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/commons-digester-1.7.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/commons-javaflow-20060411.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/iText-2.1.0.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/jasperreports-3.5.2.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/jasperreports-3.5.2-javaflow.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/png-encoder-1.5.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/poi-3.2-FINAL-20081019.jar"/>
+	<classpathentry kind="lib" path="src/swingworker/swing-worker-1.2.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/jcommon-1.0.16.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/jfreechart-1.0.13.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/groovy-1.7.2.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/groovy-1.0-RC-01.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/groovy-1.0-RC-02.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/cglib-2.2.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/asm-2.2.1.jar"/>
+	<classpathentry kind="lib" path="src/lib/javahelp/jsgaHelp.jar"/>
+	<classpathentry kind="lib" path="src/lib/javahelp/lib/hsviewer.jar"/>
+	<classpathentry kind="lib" path="src/lib/javahelp/lib/jh.jar"/>
+	<classpathentry kind="lib" path="src/lib/javahelp/lib/jhall.jar"/>
+	<classpathentry kind="lib" path="src/lib/javahelp/lib/jhbasic.jar"/>
+	<classpathentry kind="lib" path="src/lib/javahelp/lib/jhsearch.jar"/>
+	<classpathentry kind="lib" path="src/lib/javahelp/lib/jsearch.jar"/>
+	<classpathentry kind="lib" path="src/reporteLib/ant-1.8.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cheatsheet
+      title="Title">
+   <item
+         title="Item (1)">
+      <description>
+         <b>Body</b>
+      </description>
+   </item>
+   <item
+         title="Item (2)">
+      <description>
+         <b>Body</b>
+      </description>
+   </item>
+   <item
+         title="Item (3)">
+      <description>
+         <b>Body</b>
+      </description>
+      <command
+            required="false"
+            serialization="org.eclipse.mylyn.java.ui.editor.folding.auto"/>
+   </item>
+   <intro>
+      <description>
+         <b>Body</b>
+      </description>
+   </intro>
+   <item
+         title="Item">
+      <description>
+         <b>Body</b>
+      </description>
+   </item>
+</cheatsheet>
